@@ -41,7 +41,9 @@ namespace SmartCredit.FrontEnd.WebApp.Contracts.Repositories
                     Balance = creditCard.Balance,
                     AvailableBalance = creditCard.AvailableBalance,
                     ClosingDay = creditCard.ClosingDay,
-                    Type = creditCard.Type
+                    Type = creditCard.Type,
+                    ConfigurableInterestRate = creditCard.ConfigurableInterestRate,
+                    ConfigurableMinimumBalanceRate = creditCard.ConfigurableMinimumBalanceRate
                 }
             };
 

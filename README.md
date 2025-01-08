@@ -3,7 +3,6 @@
 
 **PRUEBA LA DEMO EN AZURE**: 
 https://smartcreditwebapp-aaascnf2fre7ctg7.canadacentral-01.azurewebsites.net/
-
 ---
 
 
@@ -22,8 +21,7 @@ https://smartcreditwebapp-aaascnf2fre7ctg7.canadacentral-01.azurewebsites.net/
    - [CreditCard](#creditcard)
    - [Transactions](#transactions)
 7. [Extras implementados](#extras-implementados)
-8. [Contribuciones](#contribuciones)
-9. [Licencia](#licencia)
+8. [Licencia](#licencia)
 
 ## Descripción
 Este proyecto es una aplicación web para gestionar el estado de cuenta de una tarjeta de crédito. Permite visualizar movimientos, realizar pagos y exportar datos en formatos como PDF.
@@ -60,6 +58,9 @@ El sistema se desarrolló utilizando tecnologías .NET 6, ASP.NET Web API, Razor
 - **CQRS**: Separación de comandos y consultas.
 - **Swagger**: Documentación interactiva de la API.
 - **HealthChecks**: Monitoreo del estado del sistema.
+
+  ![image](https://github.com/user-attachments/assets/d7474cdf-a195-4db8-9c85-ecc2cef4d834)
+
 
 ### Frontend
 - **Razor**: Renderizado de vistas dinámicas.
@@ -171,6 +172,14 @@ Esta arquitectura asegura una alta cohesión dentro de las capas y un bajo acopl
 - **Exportación de compras a Excel**..
 - **Despliegue en Azure con acceso público**
 
+---
+
+## Documentación extra
+- **Documentación de la API**..
+  [Click aquí](https://github.com/juanerroa/smart-credit/blob/main/Documentaci%C3%B3n_API%20.pdf
+)
+- **Colección POSTMAN**..
+  [Click aquí](https://github.com/juanerroa/smart-credit/blob/main/POSTMAN_COLLECTION.json)
 ---
 
 ## Licencia

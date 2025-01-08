@@ -3,9 +3,10 @@
 
 **PRUEBA LA DEMO EN AZURE**: 
 https://smartcreditwebapp-aaascnf2fre7ctg7.canadacentral-01.azurewebsites.net/
----
 
 
+  
+ --- 
 ## Índice
 1. [Descripción](#descripción)
 2. [Funcionalidades principales](#funcionalidades-principales)
@@ -21,7 +22,8 @@ https://smartcreditwebapp-aaascnf2fre7ctg7.canadacentral-01.azurewebsites.net/
    - [CreditCard](#creditcard)
    - [Transactions](#transactions)
 7. [Extras implementados](#extras-implementados)
-8. [Licencia](#licencia)
+8. [Documentación extra](#documentación-extra)
+9. [Licencia](#licencia)
 
 ## Descripción
 Este proyecto es una aplicación web para gestionar el estado de cuenta de una tarjeta de crédito. Permite visualizar movimientos, realizar pagos y exportar datos en formatos como PDF.

@@ -73,7 +73,7 @@ El sistema se desarrolló utilizando tecnologías .NET 6, ASP.NET Web API, Razor
 
 ### Base de datos
 - **SQL Server**: Almacenamiento de información con procedimientos almacenados (PL/SQL).
-
+  [Click aquí para ver scripts](https://github.com/juanerroa/smart-credit/tree/main/src/BackEnd/Infrastructure/SmartCredit.BackEnd.Persistence/Common) 
 ---
 
 ## Estructura del proyecto
@@ -138,6 +138,7 @@ Esta arquitectura asegura una alta cohesión dentro de las capas y un bajo acopl
    `src\BackEnd\Presentation\SmartCredit.BackEnd.WebApi\appsettings.json`.
    
  - No es necesario aplicar las migraciones, el proyecto las aplicara de manera automatica al ser ejecutado en caso la base de datos no exista.
+ - No es necesario crear los procedimientos almacenados, el proyecto los creará de manera automática para recrearlos en el primer despliegue.
  
 3. **Ejecutar el Backend:**
    ```bash

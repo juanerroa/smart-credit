@@ -137,7 +137,7 @@ Esta arquitectura asegura una alta cohesión dentro de las capas y un bajo acopl
    - Agregar cadena de conexión  de la base de datos a ser:
    `src\BackEnd\Presentation\SmartCredit.BackEnd.WebApi\appsettings.json`.
    
- - No es necesario aplicar las migraciones, el proyecto las aplicara de manera automatica al ser ejecutado en caso la base de datos no exista.
+ - No es necesario crear la base de datos manualmente, el proyecto las aplicara la creara de manera automatica al ser ejecutado en caso la base de datos no exista.
  - No es necesario crear los procedimientos almacenados, el proyecto los creará de manera automática para recrearlos en el primer despliegue.
  
 3. **Ejecutar el Backend:**

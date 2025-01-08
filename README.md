@@ -1,5 +1,5 @@
 # SmartCredit
-[![](https://i.imgur.com/JhUiyw5.png)](https://smartcreditwebapp-aaascnf2fre7ctg7.canadacentral-01.azurewebsites.net/)
+![](demo.gif)
 
 **DEMO**: https://smartcreditwebapp-aaascnf2fre7ctg7.canadacentral-01.azurewebsites.net/
 
@@ -169,11 +169,6 @@ Esta arquitectura asegura una alta cohesión dentro de las capas y un bajo acopl
 ## Extras implementados
 - **Exportación de compras a Excel**. (No es funcional en Azure debido a la suscripción gratuita).
 - **Despliegue en Azure con acceso público **
-
----
-
-## Contribuciones
-Si deseas contribuir, abre un issue o realiza un pull request en este repositorio.
 
 ---
 

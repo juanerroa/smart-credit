@@ -65,7 +65,7 @@
 
         $(document).on('click', '#btnExport', function(){
             const [year, month] = $('#periodo').val().split('-');
-            window.location.href = `@Url.Action("GetStamentPeriodPDF","CreditCards")?year=${year}&month=${month}`;
+            window.location.href = `@Url.Action("GetStamentPeriodExcel", "CreditCards")?year=${year}&month=${month}`;
         });
 
     </script>

@@ -123,12 +123,12 @@
                     <p class="bi bi-house-door" style="position:fixed;"> Inicio</p><br>
                 </a>
             </li>
-            <li>
+            <li data-bs-toggle="tooltip" data-bs-placement="right" title="@(ViewData["CardIdSelected"] == null ? "Debe seleccionar una tarjeta" : "")">
                 <a asp-area="" asp-controller="Transactions" asp-action="Index" class="nav-link link-body-emphasis @disabledNavCardDependency">
                     <p class="bi bi-person-circle" style="position:fixed;"> Transacciones</p><br>
                 </a>
             </li>
-            <li>
+            <li data-bs-toggle="tooltip" data-bs-placement="right" title="@(ViewData["CardIdSelected"] == null ? "Debe seleccionar una tarjeta" : "")">
                 <a asp-area="" asp-controller="CreditCards" asp-action="Statement" class="nav-link link-body-emphasis @disabledNavCardDependency">
                     <p class="bi bi-table" style="position:fixed;"> Estado de cuenta</p><br>
                 </a>
@@ -214,6 +214,12 @@
                 $('#sidebar').toggleClass('hidden');
             });
         });
+
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
     </script>
 </body>
 

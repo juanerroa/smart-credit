@@ -1,7 +1,8 @@
 # SmartCredit
 ![](demo.gif)
 
-**DEMO**: https://smartcreditwebapp-aaascnf2fre7ctg7.canadacentral-01.azurewebsites.net/
+**PRUEBA LA DEMO EN AZURE**: 
+https://smartcreditwebapp-aaascnf2fre7ctg7.canadacentral-01.azurewebsites.net/
 
 ---
 
@@ -64,7 +65,7 @@ El sistema se desarrolló utilizando tecnologías .NET 6, ASP.NET Web API, Razor
 - **Razor**: Renderizado de vistas dinámicas.
 - **jQuery**: Manipulación de DOM y peticiones AJAX.
 - **FluentValidation**: Validaciones centralizadas.
-- **DinkToPDF**: Generación de reportes.
+- **EPPlus**: Generación de reportes.
 - **Bootstrap 5**: Librería de estilos.
 
 ### Base de datos
@@ -167,8 +168,8 @@ Esta arquitectura asegura una alta cohesión dentro de las capas y un bajo acopl
 ---
 
 ## Extras implementados
-- **Exportación de compras a Excel**. (No es funcional en Azure debido a la suscripción gratuita).
-- **Despliegue en Azure con acceso público **
+- **Exportación de compras a Excel**..
+- **Despliegue en Azure con acceso público**
 
 ---
 

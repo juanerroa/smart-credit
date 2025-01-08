@@ -1,0 +1,84 @@
+/*Global*/
+
+html {
+  font-size: 14px;
+}
+
+#body-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 0.6;
+    z-index: 9999;
+    display:none;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/*Navs*/
+
+.navbar-brand {
+    color: #A53533 !important;
+}
+
+.navbar-light.bg-white {
+    background-color: #fcfcfc !important;
+}
+
+.title-text {
+    color: #682223;
+}
+
+
+/*Botones*/
+
+.btn.btn-danger {
+    color: white !important;
+    background-color: #A53533 !important;
+}
+
+.btn.btn-danger:hover {
+    background-color: #892e2c !important;
+}
+
+.btn.btn-filter-secondary {
+    color: #892e2c !important;
+    background-color: #F0F4F9 !important;
+    border: none !important;
+}
+
+    .btn.btn-filter-secondary:hover {
+        background-color: #dfe1e4 !important;
+    }
+
+/* Controls */
+
+.form-control.disabled{
+    pointer-events:none;
+    background-color: #e2e2e2;
+}
+
+
+/* Tables */
+.table-custom-danger tr th {
+    background-color: #D6393F !important;
+    color: white !important;
+}
+
+.pagination{
+    justify-content:end;
+}

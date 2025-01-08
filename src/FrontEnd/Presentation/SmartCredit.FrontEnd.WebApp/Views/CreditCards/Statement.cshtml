@@ -1,0 +1,73 @@
+﻿@using SmartCredit.FrontEnd.WebApp.ViewModels
+@{
+    ViewData["Title"] = "Estado de cuenta";
+}
+
+
+<div class="pe-3 mt-5">
+    <div class="row">
+        <div class="col text-start">
+            <h1 class="title-text text-left mb-4">Estado de cuenta</h1>
+        </div>
+    </div>
+</div>
+
+<div class="table-wrapper">
+    <div class="w-100 row p-1" style="background-color: #F0F4F9;">
+        <div class="col-md-11">
+            <input id="periodo" type="month" class="form-control" name="start" value="2025-01" />
+        </div>
+        <div class="col-1">
+            <div class="d-flex gap-1">
+                <button id="btnFilter" class="btn btn-filter-secondary"><i class="fa-solid fa-refresh"></i></button>
+                <button id="btnExport" class="btn btn-filter-secondary"><i class="fa-solid fa-download"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="w-100">
+        <br />
+        <div id="statement-container" class="w-100 table p-0 pb-5">
+            <div class="w-100 h-100 mt-5 d-flex justify-content-center align-items-center">
+                <h4>Cargando...</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+
+    <script>
+
+
+        const loadStatement = async () => {
+            $('#body-overlay').show();
+            let url = '@Url.Action("GetHTMLStamentPeriod", "CreditCards")';
+
+            const [year, month] = $('#periodo').val().split('-');
+            let data = {
+                Year: year,
+                Month: month
+            };
+
+            const response = await renderPartial(url, data);
+            $('#statement-container').html(response);
+            $('#body-overlay').hide();
+        }
+
+        $(document).ready(() => {
+            loadStatement();
+        });
+
+        $(document).on('click', '#btnFilter', function () {
+            loadStatement();
+        });
+
+        $(document).on('click', '#btnExport', function(){
+            const [year, month] = $('#periodo').val().split('-');
+            window.location.href = `@Url.Action("GetStamentPeriodPDF","CreditCards")?year=${year}&month=${month}`;
+        });
+
+    </script>
+
+}

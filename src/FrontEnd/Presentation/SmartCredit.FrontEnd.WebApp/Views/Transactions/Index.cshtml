@@ -1,0 +1,84 @@
+﻿@using SmartCredit.FrontEnd.WebApp.ViewModels
+@model CreditCardViewModel
+
+@{
+    ViewData["Title"] = "Transacciones";
+}
+
+<div class="container mt-5">
+
+<div class="pe-3">
+    <div class="row">
+    <div class="col text-start">
+        <h1 class="title-text text-left mb-4">Historial de transacciones</h1>
+    </div>
+    <div class="col d-flex justify-content-end align-items-center pe-0">
+        <a href="@Url.Action("NewPayment","Transactions")" class="btn btn-success me-2">
+            <i class="fa-solid fa-coins me-1"></i>Nuevo pago
+        </a>
+        <a href="@Url.Action("NewPurchase","Transactions")" class="btn btn-danger">
+            <i class="fa-solid fa-cart-shopping me-1"></i>Nueva compra
+        </a>
+    </div>
+</div>
+</div>
+
+
+    <div class="table-wrapper">
+        <div class="w-100 row p-1" style="background-color: #F0F4F9;">
+    <div class="col-md-11">
+        <input id="periodo" type="month" class="form-control" name="start" value="2025-01" />
+    </div>
+    <div class="col-1">
+        <div class="d-flex gap-1">
+            <button id="btnFilter" class="btn btn-filter-secondary"><i class="fa-solid fa-filter"></i></button>
+            <button id="btnExport" class="btn btn-filter-secondary"><i class="fa-solid fa-download"></i></button>
+        </div>
+    </div>
+</div>
+<div class="w-100 row">
+    <div id="movements-container" class="w-100 table p-0">
+        <partial name="~/Views/Transactions/_Partials/_MovementsTable.cshtml" model="new List<TransactionsViewModel>()" />
+      </div>
+</div>
+        </div>
+
+</div>
+
+
+
+
+@section Scripts {
+        <script>
+
+            const refreshTable = async() => {
+                $('#body-overlay').show();
+                let url = '@Url.Action("GetHtmlMovementsTable", "Transactions")';
+
+                const [year, month] = $('#periodo').val().split('-');
+                let data = {
+                    CreditCardId: '@Model.Id',
+                    Year: year,
+                    Month: month
+                };
+
+                const response = await renderPartial(url, data);
+                $('#movements-container').html(response);
+                $('#body-overlay').hide();
+            }
+
+            $(document).ready(() => {
+                refreshTable();
+            });
+
+            $(document).on('click', '#btnFilter', function(){
+                refreshTable();
+            });
+
+            $(document).on('click', '#btnExport', function () {
+                const [year, month] = $('#periodo').val().split('-');
+                window.location.href = `@Url.Action("GetMovementsPDF", "Transactions")?year=${year}&month=${month}`;
+            });
+
+        </script>
+}

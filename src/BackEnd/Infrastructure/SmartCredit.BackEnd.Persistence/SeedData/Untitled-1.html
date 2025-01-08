@@ -1,0 +1,93 @@
+@{
+    Layout = null;
+}
+
+@using SmartCredit.FrontEnd.WebApp.ViewModels
+@model CreditCardStatementViewModel
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            @(SmartCredit.FrontEnd.WebApp.Helpers.BS5Inyection.Get())
+        </style>
+
+
+    </head>
+    <body>
+        <div class="w-100 ps-3 pe-3">
+    @if (!string.IsNullOrEmpty(Model.CardNumber))
+    {
+        <div class="border p-3 rounded shadow-sm">
+        <div style="width:100%">
+            <div style="float:left;">
+                <strong>Titular:</strong> @Model.HolderName <br />
+                <strong>Número de tarjeta:</strong> @Model.CardNumber<br />
+                <strong>Saldo actual:</strong> @Model.Balance.ToString("C")<br />
+                <strong>Limite de crédito:</strong> @Model.CreditLimit.ToString("C")<br />
+                <strong>Saldo disponible:</strong> @Model.AvailableBalance.ToString("C")
+            </div>
+            <div style="float:right">
+                <strong>Total Compras (Periodo):</strong> @Model.TotalPurchaseSelectedPeriod.ToString("C")<br />
+                <strong>Total Pagos (Periodo):</strong> @Model.TotalPaymentsSelectedPeriod.ToString("C")<br />
+                <strong>Total Compras (Periodo anterior):</strong> @Model.TotalPurchaseLastPeriod.ToString("C")<br />
+                <strong>Total Pagos (Periodo anterior):</strong> @Model.TotalPaymentsLastPeriod.ToString("C")
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>Cuota minima a pagar:</strong> @Model.MinimumQuota.ToString("C")<br />
+                    <strong>Monto total de contado con intereses:</strong> @Model.TotalAmountWithInterest.ToString("C")
+                </div>
+                <div class="col-md-6">
+                    <strong>Interes bonificable:</strong> @Model.BonusInterest.ToString("C")<br />
+                    <strong>Monto total a pagar:</strong> @Model.TotalPeriodBalance.ToString("C")
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h3 class="border-bottom pb-2">Transacciones</h3>
+            <table id="tblTransactions" class="table table-bordered table-striped table-hover">
+                <thead class="table-custom-danger">
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Pago</th>
+                        <th scope="col">Compra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Transactions)
+                    {
+                        <tr>
+                            <td>@item.Date.ToLocalTime().ToString("dd/MM/yyyy")<br />@item.Date.ToLocalTime().ToString("hh:mm:ss tt")</td>
+                            <td>@item.Description</td>
+                            <td class="text-success">@(item.Type == 2 ? item.Amount.ToString("C") : "-")</td>
+                            <td class="text-danger">@(item.Type == 1 ? item.Amount.ToString("C") : "-")</td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" class="text-end"><strong>Total:</strong></td>
+                        <td class="text-success" style="font-weight:bold">@Model.Transactions.Where(x => x.Type == 2).Sum(x => x.Amount).ToString("C")</td>
+                        <td class="text-danger" style="font-weight:bold">@Model.Transactions.Where(x => x.Type == 1).Sum(x => x.Amount).ToString("C")</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="w-100 h-100 mt-5 d-flex justify-content-center align-items-center">
+            <h4>No hay datos que mostrar</h4>
+        </div>
+    }
+</div>
+
+    </body>
+</html>

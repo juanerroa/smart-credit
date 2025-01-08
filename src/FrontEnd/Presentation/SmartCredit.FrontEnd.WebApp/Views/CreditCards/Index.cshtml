@@ -1,0 +1,99 @@
+﻿@model List<SmartCredit.FrontEnd.WebApp.ViewModels.CreditCardViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Tarjetas";
+}
+
+<style>
+    .card-js .expiry-container {
+        display: none;
+    }
+
+    .card-js .cvc-container {
+        display: none;
+    }
+
+    .card-js .icon {
+        top: 5px !important;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="pe-3">
+        <div class="row">
+            <div class="col text-start">
+                <h1 class="title-text text-left mb-4">Historial de transacciones</h1>
+            </div>
+            <div class="col d-flex justify-content-end align-items-center pe-0">
+                <a href="@Url.Action("Create","CreditCards")" class="btn btn-success me-2">
+                    <i class="fa-solid fa-coins me-1"></i>Agregar tarjeta
+                </a>
+            </div>
+        </div>
+    </div>    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @if (Model != null && Model.Any())
+        {
+            int index = 0;
+            foreach (var card in Model)
+            {
+                <div class="col">
+                    <div class="card card-container h-100 shadow bg-body rounded">
+                        <div class="card-wrapper card-wrapper-@index"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Titular: @card.HolderName</h5>
+                            <p class="card-text">
+                                <div class="card-js">
+                                    <input class="card-number my-custom-class bg-light" name="card-number" value="@card.CardNumber" style="pointer-events:none;">
+                                </div>
+                                <strong>Día de Corte:</strong> @card.ClosingDay<br>
+                                <strong>Balance:</strong> @card.Balance.ToString("C")<br>
+                                <strong>Limite Crédito:</strong> @card.CreditLimit.ToString("C")<br>
+                                <strong>Tipo:</strong> @card.TypeName
+                            </p>
+
+                            <div class="w-100 d-flex justify-content-end">
+                                <button class="btn btn-danger" onclick="setCardCookie('@card.Id.ToString()', this)">Seleccionar</button>
+
+                                <button class="btn btn-danger btn-loader" type="button" style="display:none;" disabled>
+                                    <div class="spinner-border spinner-border-sm" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                index++;
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <p class="text-center">No hay tarjetas de crédito disponibles.</p>
+            </div>
+        }
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+
+        const setCardCookie = (cardId, btn) => {
+            $(btn).hide();
+            $(btn).siblings('.btn-loader').show();
+
+            document.cookie = `CardIdSelected=${cardId}`;
+
+            setTimeout(() => {
+                window.location.href = "@Url.Action("Index","Transactions")";
+                $(btn).siblings('.btn-loader').hide();
+                $(btn).show();
+            },1000)
+
+        }
+
+    </script>
+}

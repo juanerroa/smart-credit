@@ -1,0 +1,99 @@
+﻿@using SmartCredit.FrontEnd.WebApp.ViewModels
+@model CreditCardViewModel
+
+@{
+    ViewData["Title"] = "Nueva Tarjeta de Crédito";
+}
+
+<h1 class="title-text text-left mt-5 mb-4">Registrar Nueva Tarjeta de Crédito</h1>
+
+<div class="mt-5 row g-3">
+    <form method="post" class="row">
+
+        <!-- Información del Cliente -->
+        <div class="col-md-6">
+            <h3 class="mb-3">Información del Cliente</h3>
+            <div class="mb-3">
+                <label asp-for="FullName"></label>
+                <input asp-for="FullName" type="text" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Address"></label>
+                <input asp-for="Address" type="text" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="City"></label>
+                <input asp-for="City" type="text" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="State"></label>
+                <input asp-for="State" type="text" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Country"></label>
+                <input asp-for="Country" type="text" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" type="email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Información de la Tarjeta -->
+        <div class="col-md-6">
+            <h3 class="mb-3">Información de la Tarjeta</h3>
+            <div class="mb-3">
+                <label asp-for="CardNumber"></label>
+                <input asp-for="CardNumber" type="text" class="form-control" />
+                <span asp-validation-for="CardNumber" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="HolderName"></label>
+                <input asp-for="HolderName" type="text" class="form-control" />
+                <span asp-validation-for="HolderName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CreditLimit"></label>
+                <input asp-for="CreditLimit" type="number" class="form-control" step="0.01" />
+                <span asp-validation-for="CreditLimit" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ClosingDay"></label>
+                <input asp-for="ClosingDay" type="number" class="form-control" />
+                <span asp-validation-for="ClosingDay" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ConfigurableInterestRate"></label>
+                <input asp-for="ConfigurableInterestRate" type="number" class="form-control" step="0.01" />
+                <span asp-validation-for="ConfigurableInterestRate" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ConfigurableMinimumBalanceRate"></label>
+                <input asp-for="ConfigurableMinimumBalanceRate" type="number" class="form-control" step="0.01" />
+                <span asp-validation-for="ConfigurableMinimumBalanceRate" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <!-- Botón de Enviar -->
+        <div class="col-12 text-center mt-4">
+            <button type="submit" class="btn btn-primary">Guardar Tarjeta</button>
+        </div>
+    </form>
+</div>

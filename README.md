@@ -172,11 +172,6 @@ Esta arquitectura asegura una alta cohesión dentro de las capas y un bajo acopl
 
 ---
 
-## Contribuciones
-Si deseas contribuir, abre un issue o realiza un pull request en este repositorio.
-
----
-
 ## Licencia
 Este proyecto está licenciado bajo [Licencia MIT](LICENSE).
 

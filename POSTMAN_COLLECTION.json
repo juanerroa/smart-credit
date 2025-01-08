@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "69744f92-a3a3-4f83-b8fa-0b0ec2a51f1a",
+		"name": "SmartCredit - Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40742345"
+	},
+	"item": [
+		{
+			"name": "CreditCard",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/api/CreditCard/GetAll",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"api",
+								"CreditCard",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/api/CreditCard/GetById/217D045E-7B42-4F24-907A-08DD2FA47290",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"api",
+								"CreditCard",
+								"GetById",
+								"217D045E-7B42-4F24-907A-08DD2FA47290"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddUserAndCreditCard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": {\r\n    \"fullName\": \"Hector Mendez\",\r\n    \"address\": \"Col. Los Angeles\",\r\n    \"city\": \"Apopa\",\r\n    \"state\": \"San Salvador\",\r\n    \"country\": \"Apopa\",\r\n    \"email\": \"hecto@mail.com\"\r\n  },\r\n  \"card\": {\r\n    \"cardNumber\": \"379214885941799\",\r\n    \"holderName\": \"Hector Mendez\",\r\n    \"creditLimit\": 2000,\r\n    \"balance\": 0,\r\n    \"availableBalance\": 2000,\r\n    \"closingDay\": 25,\r\n    \"configurableInterestRate\": 1,\r\n    \"configurableMinimumBalanceRate\": 2\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/api/CreditCard/AddUserAndCreditCard",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"api",
+								"CreditCard",
+								"AddUserAndCreditCard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCreditCardStatement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"creditCardId\": \"217D045E-7B42-4F24-907A-08DD2FA47290\",\r\n  \"year\": 2025,\r\n  \"month\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/api/CreditCard/GetCreditCardStatement",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"api",
+								"CreditCard",
+								"GetCreditCardStatement"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "GetByPeriod",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"creditCardId\": \"217D045E-7B42-4F24-907A-08DD2FA47290\",\r\n  \"year\": 2025,\r\n  \"month\": 1,\r\n  \"type\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/api/Transactions/GetByPeriod",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"api",
+								"Transactions",
+								"GetByPeriod"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddPurchase",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"creditCardId\": \"217D045E-7B42-4F24-907A-08DD2FA47290\",\r\n  \"date\": \"2025-01-08T18:05:04.054Z\",\r\n  \"amount\": 80.50,\r\n  \"description\": \"Mensualidad de universidad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/api/Transactions/AddPurchase",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"api",
+								"Transactions",
+								"AddPurchase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddPayment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"creditCardId\": \"217D045E-7B42-4F24-907A-08DD2FA47290\",\r\n  \"date\": \"2025-01-05T18:06:04.054Z\",\r\n  \"amount\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/api/Transactions/AddPayment",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"api",
+								"Transactions",
+								"AddPayment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ApiUrl",
+			"value": "http://localhost:5001"
+		}
+	]
+}

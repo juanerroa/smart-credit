@@ -1,5 +1,5 @@
 # SmartCredit
-[![]([https://i.imgur.com/JhUiyw5.png](https://github.com/juanerroa/smart-credit/blob/main/demo.gif))](https://smartcreditwebapp-aaascnf2fre7ctg7.canadacentral-01.azurewebsites.net/)
+![SmartCredit]([https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif](https://github.com/juanerroa/smart-credit/blob/main/demo.gif?raw=true))
 
 **DEMO**: https://smartcreditwebapp-aaascnf2fre7ctg7.canadacentral-01.azurewebsites.net/
 

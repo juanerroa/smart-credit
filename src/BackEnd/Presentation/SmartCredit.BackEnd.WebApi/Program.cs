@@ -38,8 +38,7 @@ builder.Services.AddCors(p => p.AddPolicy("MyPolicy", builder =>
     builder
     .AllowAnyOrigin()
     .AllowAnyHeader()
-    .AllowAnyMethod()
-    .SetIsOriginAllowed(origin => true);
+    .AllowAnyMethod();
 }));
 
 builder.Services.AddAutoMapper(typeof(AutomapperProfile));

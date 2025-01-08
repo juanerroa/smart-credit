@@ -51,7 +51,7 @@
                     @foreach (var item in Model.Transactions)
                     {
                         <tr>
-                            <td>@item.Date.ToLocalTime().ToString("dd/MM/yyyy")<br />@item.Date.ToLocalTime().ToString("hh:mm:ss tt")</td>
+                            <td>@item.Date.ToString("dd/MM/yyyy")<br />@item.Date.ToString("hh:mm:ss tt")</td>
                             <td>@item.Description</td>
                             <td class="text-success">@(item.Type == 2 ? item.Amount.ToString("C") : "-")</td>
                             <td class="text-danger">@(item.Type == 1 ? item.Amount.ToString("C") : "-")</td>

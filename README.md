@@ -134,7 +134,7 @@ Esta arquitectura asegura una alta cohesión dentro de las capas y un bajo acopl
 
    - Asegurarse que la base de datos no exista
    
-   - Agregar cadena de conexión  de la base de datos a ser:
+   - Agregar cadena de conexión  de la base de datos a ser creada:
    `src\BackEnd\Presentation\SmartCredit.BackEnd.WebApi\appsettings.json`.
    
  - No es necesario crear la base de datos manualmente, el proyecto las aplicara la creara de manera automatica al ser ejecutado en caso la base de datos no exista.

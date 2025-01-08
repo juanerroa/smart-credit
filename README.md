@@ -167,8 +167,8 @@ Esta arquitectura asegura una alta cohesión dentro de las capas y un bajo acopl
 ---
 
 ## Extras implementados
-- **Exportación de compras a Excel**. (No es funcional en Azure debido a la suscripción gratuita).
-- **Despliegue en Azure con acceso público **
+- **Exportación de compras a Excel**..
+- **Despliegue en Azure con acceso público**
 
 ---
 

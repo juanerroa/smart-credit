@@ -1,10 +1,5 @@
 # SmartCredit
 ![](demo.gif)
-
-**PRUEBA LA DEMO EN AZURE**: 
-https://smartcreditwebapp-aaascnf2fre7ctg7.canadacentral-01.azurewebsites.net/
-
-
   
  --- 
 ## Índice
